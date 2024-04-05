@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Homepage, Signup, Success } from "../pages";
+import { Homepage, Signup } from "../pages";
 import * as routes from "./routes";
 
 const Config = () => {

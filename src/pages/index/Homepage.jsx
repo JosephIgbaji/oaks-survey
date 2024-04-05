@@ -6,7 +6,7 @@ import Layout from "../../components/Layout";
 function Homepage() {
   return (
     <div>
-      <div className="flex w-full lg:flex-row flex-col justify-center items-center over md:p-24 p-10">
+      <div className="flex w-full lg:flex-row flex-col justify-center items-center over md:p-32 p-10">
         <div className="w-full ">
           <div className="mb-16">
             <img src={logo} alt="" width={150} />

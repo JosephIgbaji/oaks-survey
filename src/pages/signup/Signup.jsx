@@ -15,7 +15,7 @@ const Signup = () => {
 
   async function handleFormSubmit(e) {
     setShowLoading(true);
-    console.log(firstname, lastname, email, country);
+    // console.log(firstname, lastname, email, country);
     e.preventDefault();
     if (!firstname || !lastname || !email || !country) {
       alert("All fields are required");
@@ -30,7 +30,7 @@ const Signup = () => {
       }
     );
     const ss = await dt;
-    console.log(ss.data);
+    // console.log(ss.data);
     if (!ss.data.success) {
       alert("Kindly try again");
     }
@@ -41,7 +41,7 @@ const Signup = () => {
     setCountry("");
     setLastname("");
     setSubscribe(true);
-    console.log("completed");
+    // console.log("completed");
     // window.location.href = "/success";
   }
   return (
@@ -66,7 +66,7 @@ const Signup = () => {
             Welcome to the
           </h2>
           <h2 className="md:text-4xl font-semibold mb-3">
-            Nigeriam Global Vendor <br />
+            Nigerian Global Vendor <br />
           </h2>
           <h2 className="md:text-4xl font-semibold mb-5">Directory</h2>
           <p className="mb-8">Please complete the form below to sign up</p>
