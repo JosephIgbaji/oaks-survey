@@ -16,7 +16,7 @@ function Homepage() {
               Welcome to the
             </h2>
             <h2 className="md:text-4xl font-semibold mb-3">
-              Nigeriam Global Vendor <br />
+              Nigerian Global Vendor <br />
             </h2>
             <h2 className="md:text-4xl font-semibold mb-10">Directory</h2>
             <Link
