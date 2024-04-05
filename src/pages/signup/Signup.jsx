@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Layout from "./../../components/Layout";
 import { countries } from "./../../countries";
 import axios from "axios";
-import loading from "../../assets/images/loading.png";
+import loading from "../../assets/images/spinner.gif";
 import { Link } from "react-router-dom";
 
 const Signup = () => {
@@ -18,6 +18,7 @@ const Signup = () => {
     // console.log(firstname, lastname, email, country);
     e.preventDefault();
     if (!firstname || !lastname || !email || !country) {
+      setShowLoading(false);
       alert("All fields are required");
     }
     const dt = await axios.post(
@@ -48,18 +49,20 @@ const Signup = () => {
     <Layout>
       {subscribe ? (
         <div>
-          <h2 className="md:text-6xl text-3xl font-semibold mb-10 text-[#F9B806]">
-            Congratulations....
+          <h2 className="md:text-3xl text-2xl font-semibold mb-10 text-[#F9B806]">
+            Thank you for signing up we will get back to you shortly
           </h2>
           <Link to="/" className="w-full bg-gray-400 rounded-lg p-2 text-white">
             Return
           </Link>{" "}
         </div>
       ) : (
-        <div className="relative ">
+        <div className="">
           {showLoading && (
-            <div className="absolute bg-slate-200 left-32 top-32">
-              <img src={loading} alt="" width={200} />
+            <div className="absolute bg-slate-200 bg-opacity-50 w-screen h-screen z-50 top-0 left-0">
+              <div className="w-full h-full flex items-center justify-center">
+                <img src={loading} alt="" width={200} />
+              </div>
             </div>
           )}
           <h2 className="md:text-4xl font-semibold mb-3 text-[#F9B806]">
