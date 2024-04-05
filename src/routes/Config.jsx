@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Homepage, LoginPage, RegisterPage } from "../pages";
+import { Homepage, Signup, Success } from "../pages";
 import * as routes from "./routes";
 
 const Config = () => {
@@ -7,8 +7,8 @@ const Config = () => {
     <>
       <Routes>
         <Route path={routes.INDEX} element={<Homepage />} />
-        <Route path={routes.LOGIN} element={<LoginPage />} />
-        <Route path={routes.REGISTER} element={<RegisterPage />} />
+        <Route path={routes.SIGNUP} element={<Signup />} />
+        <Route path={routes.SUCCESS} element={<Success />} />
       </Routes>
     </>
   );

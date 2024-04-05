@@ -11,29 +11,11 @@ export default {
       Montserrat: ["Montserrat", "san-serif"],
     },
     extend: {
-      textColor: {
-        "primary-dark-green": "#3D7100",
-        "primary-bright-green": "#7ADD02",
-        "primary-light-green": "#94FC83",
-        "primary-gray": "#AEAEAE",
-        "primary-light-gray": "#ADADAD",
-        "primary-dark-gray": "#4D4D4D",
-        "primary-red": "#FF3A29",
-        "secondary-white": "#7C8DB5",
-      },
+      textColor: {},
 
-      borderColor: {
-        "primary-dark-green": "#3D7100",
-        "primary-bright-green": "#7ADD02",
-        "primary-light-green": "#94FC83",
-      },
+      borderColor: {},
 
-      backgroundColor: {
-        "primary-dark-green": "#3D7100",
-        "primary--bright-green": "#7ADD02",
-        "primary-gray": "#AEAEAE",
-        "primary-black": "#091001",
-      },
+      backgroundColor: {},
       fontFamily: {
         "pt-serif": "'PT Serif Caption', serif",
         poppins: "'Poppins', sans-serif",
@@ -45,5 +27,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwind-scrollbar"), require("flowbite/plugin")],
+  plugins: [],
 };
