@@ -1,5 +1,5 @@
 .login-text {
-  color: #fff;
+  color: #000;
   font-family: Poppins;
   font-size: 32px;
   font-style: normal;
@@ -16,7 +16,7 @@
   gap: 24px;
 }
 .login-desc {
-  color: #fff;
+  color: #000;
   font-family: Poppins;
   font-size: 18px;
   font-style: normal;
@@ -59,7 +59,7 @@
   height: 42px;
 }
 .auth-question {
-  color: #fff;
+  color: #000;
   font-family: Poppins;
   font-size: 18px;
   font-style: normal;
@@ -85,7 +85,7 @@
   letter-spacing: -0.54px;
 }
 .auth-label {
-  color: #fff;
+  color: #000;
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;
