@@ -1,13 +1,28 @@
 import React from "react";
 import logo from "../assets/images/oaks-logo.png";
 import persons from "../assets/images/two-persons.jpg";
+import { Link, Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 const Layout = ({ children }) => {
+  const token = useSelector((state) => state.user?.token);
+
+  const isAuthenticated = token !== null && token !== undefined;
+
+  if (isAuthenticated) {
+    // console.log("go to admin ");
+    window.location.href = "/admin/dashboard";
+    // <Navigate to="/admin/dashboard" />;
+  }
+
   return (
     <div className="flex w-full lg:flex-row flex-col gap-5 lg:h-screen lg:overflow-x-hidden items-center">
       <div className="w-full md:p-24 p-10">
-        <div className="mb-16">
-          <img src={logo} alt="" width={150} />
-        </div>
+        <Link to={"/"}>
+          <div className="mb-16">
+            <img src={logo} alt="" width={150} />
+          </div>
+        </Link>
         {children}
       </div>
       <div className="relative w-full flex items-center justify-center lg:justify-start">

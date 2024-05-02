@@ -10,6 +10,7 @@ const Signup = () => {
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [country, setCountry] = useState("");
+  const [user_type, setUser_type] = useState("");
   const [showLoading, setShowLoading] = useState(false);
   const [subscribe, setSubscribe] = useState(false);
 
@@ -28,6 +29,7 @@ const Signup = () => {
         last_name: lastname,
         email,
         country,
+        user_type,
       }
     );
     const ss = await dt;
@@ -125,6 +127,34 @@ const Signup = () => {
                     {cn}
                   </option>
                 ))}
+              </select>
+            </div>
+            <div className="w-full mb-5">
+              <select
+                value={user_type}
+                onChange={(e) => setUser_type(e.target.value)}
+                className="w-full rounded-lg bg-gray-100 border-none p-2 "
+              >
+                <option
+                  className="w-full rounded-lg bg-gray-100 border-none "
+                  defaultValue="User Type"
+                  disabled={""}
+                >
+                  Select User Type
+                </option>
+
+                <option
+                  className="w-full rounded-lg bg-gray-100 border-none "
+                  value={"Customer"}
+                >
+                  Customer
+                </option>
+                <option
+                  className="w-full rounded-lg bg-gray-100 border-none "
+                  value={"Vendor"}
+                >
+                  Vendor
+                </option>
               </select>
             </div>
             <button

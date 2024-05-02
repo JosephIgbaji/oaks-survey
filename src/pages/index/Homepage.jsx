@@ -11,6 +11,7 @@ function Homepage() {
           <div className="mb-16">
             <img src={logo} alt="" width={150} />
           </div>
+
           <div>
             <h2 className="md:text-4xl font-semibold mb-3 text-[#F9B806]">
               Welcome to the
@@ -19,12 +20,20 @@ function Homepage() {
               Nigerian Global Vendor <br />
             </h2>
             <h2 className="md:text-4xl font-semibold mb-10">Directory</h2>
-            <Link
-              to="/signup"
-              className="w-full bg-gray-400 rounded-lg p-2 text-white"
-            >
-              Create an Account
-            </Link>
+            <div className="">
+              <Link
+                to="/signup"
+                className="w-full bg-gray-400 rounded-lg p-2 text-white mr-3"
+              >
+                Create an Account
+              </Link>
+              <Link
+                to="/signin"
+                className="w-full bg-gray-400 rounded-lg p-2 text-white mr-3"
+              >
+                Admin Portal
+              </Link>
+            </div>
           </div>
         </div>
         <div className="w-full flex items-center justify-center">
