@@ -68,11 +68,11 @@ const Dashboard = () => {
 
   const dispatch = useDispatch();
 
-  console.log(survey?.data);
+  // console.log(survey?.data);
   return (
     <>
       <div className="h-[50px] bg-slate-400 mb-5 flex px-5 items-center justify-between">
-        <div>Hello, {user?.user?.name}!</div>
+        {user?.user && <div>Hello, {user?.user?.name}!</div>}
         <button
           onClick={() => handleLogout(dispatch)}
           className="p-1 bg-white rounded-lg text-black"
