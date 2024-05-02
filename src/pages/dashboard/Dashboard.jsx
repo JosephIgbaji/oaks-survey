@@ -18,14 +18,14 @@ import { useGetAllSurveyQuery } from "../../service/allSurvey.service";
 // import { logoutUser } from "../../redux/slices/user.slice";
 
 const Dashboard = () => {
-  const { data } = useGetUserQuery();
+  const { data: usr } = useGetUserQuery();
   const { data: survey } = useGetAllSurveyQuery();
 
   const [user, setUser] = useState("");
 
   useEffect(() => {
-    setUser(data?.user);
-  }, [data]);
+    setUser(usr?.user);
+  }, [usr]);
 
   const dispatch = useDispatch();
 
@@ -33,7 +33,7 @@ const Dashboard = () => {
   return (
     <>
       <div className="h-[50px] bg-slate-400 mb-5 flex px-5 items-center justify-between">
-        {user && <div>Hello, {user?.name}!</div>}
+        {<div>Hello, {user?.name}!</div>}
         <button
           onClick={() => handleLogout(dispatch)}
           className="p-1 bg-white rounded-lg text-black"
