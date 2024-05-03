@@ -57,7 +57,7 @@ const Dashboard = () => {
         </div>
       ) : (
         <div className="h-[50px] bg-slate-400 mb-5 flex px-5 items-center justify-between">
-          <div>Hello, {usr?.user?.name}!</div>
+          {usr?.user ? <div>Welcome {usr?.user?.name}</div> : <div>Hello!</div>}
 
           <button
             onClick={() => handleLogout(dispatch)}
