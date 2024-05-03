@@ -8,12 +8,13 @@ const Config = () => {
     <>
       <Routes>
         <Route path={routes.INDEX} element={<Homepage />} />
-        <Route path={routes.SIGNUP} element={<Signup />} />
+        {/* <Route path={routes.SIGNUP} element={<Signup />} /> */}
         <Route path={routes.SIGNIN} element={<Signin />} />
         <Route
           path={routes.DASHBOARD}
           element={<ProtectedRoute component={Dashboard} />}
         />
+        <Route path="*" element={<Homepage />} />
         {/* <Route path={routes.SUCCESS} element={<Success />} /> */}
       </Routes>
     </>
