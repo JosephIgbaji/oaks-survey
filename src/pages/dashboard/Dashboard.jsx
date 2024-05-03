@@ -29,6 +29,7 @@ const Dashboard = () => {
   const { data: survey } = useGetAllSurveyQuery();
   const [loading, setLoading] = useState(true);
 
+  const dispatch = useDispatch();
   // const [user, setUser] = useState("");
 
   useEffect(() => {
@@ -38,9 +39,7 @@ const Dashboard = () => {
     }, 4000);
   }, []);
 
-  const dispatch = useDispatch();
-
-  // console.log(survey?.data);
+  console.log(usr);
   return (
     <>
       {loading ? (
