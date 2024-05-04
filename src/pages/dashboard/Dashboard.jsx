@@ -39,7 +39,7 @@ const Dashboard = () => {
     }, 4000);
   }, []);
 
-  console.log(survey.data);
+  // console.log(survey.data);
   return (
     <>
       {loading ? (
