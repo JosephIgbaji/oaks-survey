@@ -15,7 +15,7 @@ function Homepage() {
   const [user_type, setUser_type] = useState("");
   const [showLoading, setShowLoading] = useState(false);
   const [subscribe, setSubscribe] = useState(false);
-  const [referal, setReferal] = useState("");
+  const [referalCode, setReferalCode] = useState("");
 
   async function handleFormSubmit(e) {
     setShowLoading(true);
@@ -33,7 +33,7 @@ function Homepage() {
         email,
         country,
         user_type,
-        referred_by: referal,
+        referred_by: referalCode,
       }
     );
     const ss = await dt;
@@ -47,7 +47,7 @@ function Homepage() {
     setFirstname("");
     setCountry("");
     setLastname("");
-    setReferal("");
+    setReferalCode("");
     setSubscribe(true);
     // console.log("completed");
     // window.location.href = "/success";
@@ -114,7 +114,11 @@ function Homepage() {
               )}
               <form onSubmit={handleFormSubmit}>
                 <p className="mb-8">
-                  Please complete the form below to sign up
+                  ỌjáKasuwaAhịa is here for the Nigerian Diaspora.
+                </p>
+                <p className="mb-8">
+                  Satisfy your Nigerian craving and Satisfy the cravings of
+                  Nigerians abroad by signing up below for FREE:
                 </p>
                 <div className="w-full mb-5">
                   <input
@@ -155,7 +159,7 @@ function Homepage() {
                       defaultValue=""
                       disabled=""
                     >
-                      Select country
+                      Select Country
                     </option>
                     {countries.map((cn, id) => (
                       <option
@@ -179,20 +183,20 @@ function Homepage() {
                       defaultValue="User Type"
                       disabled={""}
                     >
-                      Select User Type
+                      Would you like to buy or sell
                     </option>
 
                     <option
                       className="w-full rounded-lg bg-gray-100 border-none "
                       value={"Customer"}
                     >
-                      Customer
+                      I want to buy
                     </option>
                     <option
                       className="w-full rounded-lg bg-gray-100 border-none "
                       value={"Vendor"}
                     >
-                      Vendor
+                      I want to sell
                     </option>
                   </select>
                 </div>
@@ -200,9 +204,9 @@ function Homepage() {
                   <input
                     className="w-full rounded-lg bg-gray-100 border-none p-2 "
                     type="text"
-                    placeholder="Refered by"
-                    value={referal}
-                    onChange={(e) => setReferal(e.target.value)}
+                    placeholder="Referral Code: (letters only)"
+                    value={referalCode}
+                    onChange={(e) => setReferalCode(e.target.value)}
                   />
                 </div>
                 <button
