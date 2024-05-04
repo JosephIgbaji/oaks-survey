@@ -15,6 +15,7 @@ function Homepage() {
   const [user_type, setUser_type] = useState("");
   const [showLoading, setShowLoading] = useState(false);
   const [subscribe, setSubscribe] = useState(false);
+  const [referal, setReferal] = useState("");
 
   async function handleFormSubmit(e) {
     setShowLoading(true);
@@ -32,6 +33,7 @@ function Homepage() {
         email,
         country,
         user_type,
+        referred_by: referal,
       }
     );
     const ss = await dt;
@@ -45,6 +47,7 @@ function Homepage() {
     setFirstname("");
     setCountry("");
     setLastname("");
+    setReferal("");
     setSubscribe(true);
     // console.log("completed");
     // window.location.href = "/success";
@@ -61,10 +64,9 @@ function Homepage() {
             <h2 className="md:text-4xl font-semibold mb-3 text-[#F9B806]">
               Welcome to the
             </h2>
-            <h2 className="md:text-4xl font-semibold mb-3">
-              Nigerian Global Vendor <br />
+            <h2 className="md:text-4xl font-semibold mb-10">
+              Nigerian Global Vendor Directory <br />
             </h2>
-            <h2 className="md:text-4xl font-semibold mb-10">Directory</h2>
             {/* <div className="">
               <Link
                 to="/signup"
@@ -79,7 +81,7 @@ function Homepage() {
                 Admin Portal
               </Link>
             </div> */}
-            <div className="z-50 max-w-[500px] max-h-[500px] rounded-lg overflow-hidden -mr-10">
+            <div className="z-50 max-w-[400px] md:w-[500px] mt-10 md:h-[500px] rounded-lg overflow-hidden -mr-10">
               <img src={bg} alt="" />
             </div>
           </div>
@@ -193,6 +195,15 @@ function Homepage() {
                       Vendor
                     </option>
                   </select>
+                </div>
+                <div className="w-full mb-5">
+                  <input
+                    className="w-full rounded-lg bg-gray-100 border-none p-2 "
+                    type="text"
+                    placeholder="Refered by"
+                    value={referal}
+                    onChange={(e) => setReferal(e.target.value)}
+                  />
                 </div>
                 <button
                   className={

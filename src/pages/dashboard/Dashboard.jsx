@@ -39,7 +39,7 @@ const Dashboard = () => {
     }, 4000);
   }, []);
 
-  console.log(usr);
+  console.log(survey.data);
   return (
     <>
       {loading ? (
@@ -80,6 +80,7 @@ const Dashboard = () => {
                 <TableHead>Email</TableHead>
                 <TableHead className="">Country</TableHead>
                 <TableHead className="">User Type</TableHead>
+                <TableHead className="">Referred By</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -91,6 +92,7 @@ const Dashboard = () => {
                   <TableCell>{sv.email}</TableCell>
                   <TableCell className="">{sv.country}</TableCell>
                   <TableCell className="">{sv.user_type}</TableCell>
+                  <TableCell className="">{sv.referred_by}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
