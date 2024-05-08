@@ -155,23 +155,25 @@ function Homepage() {
                     <span className="rounded-lg border-2 w-auto p-1 mb-5 border-[#117700]">
                       Early Bird registration is free
                     </span>
-                    <div className="w-full my-5">
-                      <input
-                        className="w-full rounded-lg bg-gray-100 border-none p-2 "
-                        type="text"
-                        placeholder="First name"
-                        value={firstname}
-                        onChange={(e) => setFirstname(e.target.value)}
-                      />
-                    </div>
-                    <div className="w-full mb-5">
-                      <input
-                        className="w-full rounded-lg bg-gray-100 border-none p-2 "
-                        type="text"
-                        placeholder="Last name"
-                        value={lastname}
-                        onChange={(e) => setLastname(e.target.value)}
-                      />
+                    <div className="lg:flex w-full justify-between items-center gap-3 my-5">
+                      <div className="w-full mb-5 lg:mb-0">
+                        <input
+                          className="w-full rounded-lg bg-gray-100 border-none p-2 "
+                          type="text"
+                          placeholder="First name"
+                          value={firstname}
+                          onChange={(e) => setFirstname(e.target.value)}
+                        />
+                      </div>
+                      <div className="w-full">
+                        <input
+                          className="w-full rounded-lg bg-gray-100 border-none p-2 "
+                          type="text"
+                          placeholder="Last name"
+                          value={lastname}
+                          onChange={(e) => setLastname(e.target.value)}
+                        />
+                      </div>
                     </div>
                     <div className="w-full mb-5">
                       <input
@@ -207,42 +209,44 @@ function Homepage() {
                         ))}
                       </select>
                     </div>
-                    <div className="w-full mb-5">
-                      <select
-                        value={user_type}
-                        onChange={(e) => setUser_type(e.target.value)}
-                        className="w-full rounded-lg bg-gray-100 border-none p-2 "
-                      >
-                        <option
-                          className="w-full rounded-lg bg-gray-100 border-none "
-                          defaultValue="User Type"
-                          disabled={""}
+                    <div className="lg:flex w-full justify-between items-center gap-3 my-5">
+                      <div className="w-full mb-5 lg:mb-0">
+                        <select
+                          value={user_type}
+                          onChange={(e) => setUser_type(e.target.value)}
+                          className="w-full rounded-lg bg-gray-100 border-none p-2 "
                         >
-                          Would you like to buy or sell
-                        </option>
+                          <option
+                            className="w-full rounded-lg bg-gray-100 border-none "
+                            defaultValue="User Type"
+                            disabled={""}
+                          >
+                            Would you like to buy or sell
+                          </option>
 
-                        <option
-                          className="w-full rounded-lg bg-gray-100 border-none "
-                          value={"Customer"}
-                        >
-                          I want to buy
-                        </option>
-                        <option
-                          className="w-full rounded-lg bg-gray-100 border-none "
-                          value={"Vendor"}
-                        >
-                          I want to sell
-                        </option>
-                      </select>
-                    </div>
-                    <div className="w-full mb-5">
-                      <input
-                        className="w-full rounded-lg bg-gray-100 border-none p-2 "
-                        type="text"
-                        placeholder="Referral Code: (letters only)"
-                        value={referalCode}
-                        onChange={(e) => setReferalCode(e.target.value)}
-                      />
+                          <option
+                            className="w-full rounded-lg bg-gray-100 border-none "
+                            value={"Customer"}
+                          >
+                            I want to buy
+                          </option>
+                          <option
+                            className="w-full rounded-lg bg-gray-100 border-none "
+                            value={"Vendor"}
+                          >
+                            I want to sell
+                          </option>
+                        </select>
+                      </div>
+                      <div className="w-full">
+                        <input
+                          className="w-full rounded-lg bg-gray-100 border-none p-2 "
+                          type="text"
+                          placeholder="Referral Code: (letters only)"
+                          value={referalCode}
+                          onChange={(e) => setReferalCode(e.target.value)}
+                        />
+                      </div>
                     </div>
                     <button
                       className={
