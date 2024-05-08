@@ -87,15 +87,14 @@ const Signin = () => {
             </div>
           </div>
         )} */}
-        <h2 className="md:text-4xl font-semibold mb-3 text-[#117700]">
-          Welcome to the
+        <h2 className="md:text-4xl font-semibold mb-3 ">
+          <span className="text-[#117700]">Welcome to the</span> Nigerian Global
+          Vendor Directory Admin Portal
         </h2>
-        <h2 className="md:text-4xl font-semibold mb-3">
-          Nigerian Global Vendor <br />
-        </h2>
-        <h2 className="md:text-4xl font-semibold mb-5">
-          Directory Admin Portal
-        </h2>
+        {/* <h2 className="md:text-4xl font-semibold mb-3">
+          <br />
+        </h2> */}
+        <h2 className="md:text-4xl font-semibold mb-5"></h2>
         <p className="mb-8">Login as Admin</p>
 
         {/* <form onSubmit={handleFormSubmit}>

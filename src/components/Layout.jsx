@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../assets/images/oaks-logo.png";
-import persons from "../assets/images/two-persons.jpg";
+import persons from "../assets/images/african-freelancer.jpeg";
 import { Link, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
   }
 
   return (
-    <div className="flex w-full lg:flex-row flex-col gap-5 lg:h-screen lg:overflow-x-hidden items-center">
+    <div className="bg-[url('/Background.png')] bg-cover flex w-full lg:flex-row flex-col gap-5 lg:h-screen lg:overflow-x-hidden items-center">
       <div className="w-full md:p-24 p-10">
         <Link to={"/"}>
           <div className="mb-16">
@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
             width={600}
           />
         </div>
-        <div className="lg:h-screen hidden lg:block w-[100%] ml-20  bg-[#117700]"></div>
+        {/* <div className="lg:h-screen hidden lg:block w-[100%] ml-20  bg-[#117700]"></div> */}
       </div>
     </div>
   );
