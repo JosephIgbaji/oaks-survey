@@ -46,8 +46,8 @@ function Homepage() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 7000,
-    // autoplaySpeed: 5000,
+    // speed: 3000,
+    autoplaySpeed: 10000,
     cssEase: "linear",
   };
 
@@ -102,7 +102,7 @@ function Homepage() {
               Nigerian Global Vendor Directory <br />
             </h2>
 
-            <div className="lg:hidden">
+            <div className="lg:hidden w-[300px] sm:max-w-[400px]">
               <Slider {...settings}>
                 {slideImages.map((ads, id) => (
                   <div key={id} className="">
