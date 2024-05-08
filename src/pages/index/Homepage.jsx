@@ -110,9 +110,9 @@ function Homepage() {
     // window.location.href = "/success";
   }
   return (
-    <div>
-      <div className=" px-10">
-        <div className="mt-10 pb-10">
+    <div className="bg-[url('/Background.png')] bg-cover">
+      <div className="px-10">
+        <div className="pt-10 pb-10">
           <img src={logo} alt="" width={130} />
         </div>
         <section className="flex w-full lg:flex-row flex-col justify-between items-center gap-10">
@@ -130,7 +130,7 @@ function Homepage() {
                 <Slider {...settings}>
                   {slideImages.map((ads, id) => (
                     <div key={id} className="">
-                      <div className="w-11/12 mb-5">
+                      <div className="w-11/12 mb-5 bg-transparent">
                         <p className="text-sm">{ads.info}</p>
                       </div>
 
@@ -332,7 +332,7 @@ function Homepage() {
             <Slider {...settings}>
               {slideImages.map((ads, id) => (
                 <div key={id} className="">
-                  <div className="bg-white w-11/12 mb-5">
+                  <div className=" w-11/12 mb-5">
                     <p className="text-sm">{ads.info}</p>
                   </div>
 
