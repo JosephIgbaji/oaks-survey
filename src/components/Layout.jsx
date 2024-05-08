@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
             width={600}
           />
         </div>
-        <div className="lg:h-screen hidden lg:block w-[100%] ml-20  bg-[#F9B806]"></div>
+        <div className="lg:h-screen hidden lg:block w-[100%] ml-20  bg-[#117700]"></div>
       </div>
     </div>
   );

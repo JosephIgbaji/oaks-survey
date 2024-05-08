@@ -16,13 +16,19 @@ import "slick-carousel/slick/slick-theme.css";
 
 function Homepage() {
   const [firstname, setFirstname] = useState("");
+  const [firstnameError, setFirstnameError] = useState("");
   const [lastname, setLastname] = useState("");
+  const [lastnameError, setLastnameError] = useState("");
   const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
   const [country, setCountry] = useState("");
+  const [countryError, setCountryError] = useState("");
   const [user_type, setUser_type] = useState("");
+  const [user_typeError, setUser_typeError] = useState("");
   const [showLoading, setShowLoading] = useState(false);
   const [subscribe, setSubscribe] = useState(false);
   const [referalCode, setReferalCode] = useState("");
+  // const [referalCodeError, setReferalCodeError] = useState("");
 
   const slideImages = [
     {
@@ -55,10 +61,27 @@ function Homepage() {
     setShowLoading(true);
     // console.log(firstname, lastname, email, country);
     e.preventDefault();
-    if (!firstname || !lastname || !email || !country) {
-      setShowLoading(false);
-      alert("All fields are required");
+    if (!firstname) {
+      setFirstnameError("First name is required");
     }
+    if (!lastname) {
+      setLastnameError("First name is required");
+    }
+    if (!email) {
+      setEmailError("First name is required");
+    }
+    if (!country) {
+      setCountryError("Please select your country");
+    }
+    if (!user_type) {
+      setUser_typeError("Please select your user type");
+    }
+    if (!firstname || !lastname || !email || !country || !user_type) {
+      setShowLoading(false);
+      return;
+      // alert("All fields are required");
+    }
+
     const dt = await axios.post(
       "https://survey-dca570786965.herokuapp.com/api/v1/survey/create",
       {
@@ -156,44 +179,75 @@ function Homepage() {
                       Early Bird registration is free
                     </span>
                     <div className="lg:flex w-full justify-between items-center gap-3 my-5">
-                      <div className="w-full mb-5 lg:mb-0">
+                      <div className="relative w-full mb-5 lg:mb-0">
                         <input
                           className="w-full rounded-lg bg-gray-100 border-none p-2 "
                           type="text"
                           placeholder="First name"
                           value={firstname}
-                          onChange={(e) => setFirstname(e.target.value)}
+                          onChange={(e) => {
+                            setFirstname(e.target.value);
+                            setFirstnameError("");
+                          }}
                         />
+                        {firstnameError && (
+                          <div className="absolute -bottom-3 left-0">
+                            {" "}
+                            <Error message={firstnameError} />{" "}
+                          </div>
+                        )}
                       </div>
-                      <div className="w-full">
+                      <div className="relative w-full">
                         <input
                           className="w-full rounded-lg bg-gray-100 border-none p-2 "
                           type="text"
                           placeholder="Last name"
                           value={lastname}
-                          onChange={(e) => setLastname(e.target.value)}
+                          onChange={(e) => {
+                            setLastname(e.target.value);
+                            setLastnameError("");
+                          }}
                         />
+                        {lastnameError && (
+                          <div className="absolute -bottom-3 left-0">
+                            {" "}
+                            <Error message={lastnameError} />{" "}
+                          </div>
+                        )}
                       </div>
                     </div>
-                    <div className="w-full mb-5">
+                    <div className=" relative w-full mb-5">
                       <input
                         className="w-full rounded-lg bg-gray-100 border-none p-2 "
                         type="email"
                         placeholder="Email address"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={(e) => {
+                          setEmail(e.target.value);
+                          setEmailError("");
+                        }}
                       />
+                      {emailError && (
+                        <div className="absolute -bottom-3 left-0">
+                          {" "}
+                          <Error message={emailError} />{" "}
+                        </div>
+                      )}
                     </div>
 
-                    <div className="w-full mb-5">
+                    <div className="relative w-full mb-5">
                       <select
                         value={country}
-                        onChange={(e) => setCountry(e.target.value)}
+                        onChange={(e) => {
+                          setCountry(e.target.value);
+                          setCountryError("");
+                        }}
                         className="w-full rounded-lg bg-gray-100 border-none p-2 "
                       >
                         <option
                           className="w-full rounded-lg bg-gray-100 border-none "
                           defaultValue=""
+                          value=""
                           disabled=""
                         >
                           Select Country
@@ -208,18 +262,28 @@ function Homepage() {
                           </option>
                         ))}
                       </select>
+                      {countryError && (
+                        <div className="absolute -bottom-3 left-0">
+                          {" "}
+                          <Error message={countryError} />{" "}
+                        </div>
+                      )}
                     </div>
                     <div className="lg:flex w-full justify-between items-center gap-3 my-5">
-                      <div className="w-full mb-5 lg:mb-0">
+                      <div className="relative w-full mb-5 lg:mb-0">
                         <select
                           value={user_type}
-                          onChange={(e) => setUser_type(e.target.value)}
+                          onChange={(e) => {
+                            setUser_type(e.target.value);
+                            setUser_typeError("");
+                          }}
                           className="w-full rounded-lg bg-gray-100 border-none p-2 "
                         >
                           <option
                             className="w-full rounded-lg bg-gray-100 border-none "
                             defaultValue="User Type"
                             disabled={""}
+                            value={""}
                           >
                             Would you like to buy or sell
                           </option>
@@ -237,8 +301,14 @@ function Homepage() {
                             I want to sell
                           </option>
                         </select>
+                        {user_typeError && (
+                          <div className="absolute -bottom-3 left-0">
+                            {" "}
+                            <Error message={user_typeError} />{" "}
+                          </div>
+                        )}
                       </div>
-                      <div className="w-full">
+                      <div className="relative w-full">
                         <input
                           className="w-full rounded-lg bg-gray-100 border-none p-2 "
                           type="text"
@@ -283,3 +353,7 @@ function Homepage() {
 }
 
 export default Homepage;
+
+const Error = ({ message }) => {
+  return <p className="text-red-700 text-xs ">{message}</p>;
+};

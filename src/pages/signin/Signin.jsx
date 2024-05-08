@@ -87,7 +87,7 @@ const Signin = () => {
             </div>
           </div>
         )} */}
-        <h2 className="md:text-4xl font-semibold mb-3 text-[#F9B806]">
+        <h2 className="md:text-4xl font-semibold mb-3 text-[#117700]">
           Welcome to the
         </h2>
         <h2 className="md:text-4xl font-semibold mb-3">
