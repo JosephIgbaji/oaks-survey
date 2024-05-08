@@ -122,16 +122,18 @@ function Homepage() {
             <div className="flex items-center justify-center">
               {subscribe ? (
                 <div>
-                  <h2 className="md:text-3xl text-2xl font-semibold mb-10 text-[#F9B806]">
+                  <h2 className="md:text-3xl text-2xl font-semibold text-[#117700]">
                     Thank you for signing up we will get back to you shortly
                   </h2>
-                  <Link
-                    to="/"
-                    className="w-full bg-gray-400 rounded-lg p-2 text-white"
-                    onClick={<Navigate to={"/"} />}
-                  >
-                    Return
-                  </Link>{" "}
+                  <div className="mt-5">
+                    <Link
+                      to="/"
+                      className="w-full bg-gray-400 rounded-lg p-2 text-white mt-5"
+                      onClick={<Navigate to={"/"} />}
+                    >
+                      Return
+                    </Link>{" "}
+                  </div>
                 </div>
               ) : (
                 <div className="">
