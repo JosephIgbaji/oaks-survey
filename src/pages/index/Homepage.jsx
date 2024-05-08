@@ -111,242 +111,241 @@ function Homepage() {
   }
   return (
     <div>
-      <div className="flex w-full lg:flex-row flex-col justify-between items-center gap-10 p-10">
-        <div className="">
-          <div className="mb-8">
-            <img src={logo} alt="" width={130} />
-          </div>
+      <div className=" px-10">
+        <div className="mt-10 pb-10">
+          <img src={logo} alt="" width={130} />
+        </div>
+        <section className="flex w-full lg:flex-row flex-col justify-between items-center gap-10">
+          <div className="">
+            <div className="mb-10">
+              <h2 className="md:text-4xl font-semibold mb-3 ">
+                <span className="text-[#117700]">Welcome to the</span> Nigerian
+                Global Vendor Directory
+              </h2>
+              {/* <h2 className="md:text-4xl font-semibold mb-10">
+                <br />
+              </h2> */}
 
-          <div className="max-w-[600px]">
-            <h2 className="md:text-4xl font-semibold mb-3 text-[#117700]">
-              Welcome to the
-            </h2>
-            <h2 className="md:text-4xl font-semibold mb-10">
-              Nigerian Global Vendor Directory <br />
-            </h2>
+              <div className="lg:hidden w-[350px] sm:w-[450px] md:w-[600px]">
+                <Slider {...settings}>
+                  {slideImages.map((ads, id) => (
+                    <div key={id} className="">
+                      <div className="w-11/12 mb-5">
+                        <p className="text-sm">{ads.info}</p>
+                      </div>
 
-            <div className="lg:hidden w-[300px] sm:max-w-[400px]">
-              <Slider {...settings}>
-                {slideImages.map((ads, id) => (
-                  <div key={id} className="">
-                    <div className="w-11/12 mb-5">
-                      <p className="text-sm">{ads.info}</p>
-                    </div>
-
-                    <img
-                      src={ads.url}
-                      alt=""
-                      className="object-cover rounded-xl"
-                    />
-                  </div>
-                ))}
-              </Slider>
-            </div>
-            <div className="flex items-center justify-center">
-              {subscribe ? (
-                <div>
-                  <h2 className="md:text-3xl text-2xl font-semibold text-[#117700]">
-                    Thank you for signing up we will get back to you shortly
-                  </h2>
-                  <div className="mt-5">
-                    <Link
-                      to="/"
-                      className="w-full bg-gray-400 rounded-lg p-2 text-white mt-5"
-                      onClick={<Navigate to={"/"} />}
-                    >
-                      Return
-                    </Link>{" "}
-                  </div>
-                </div>
-              ) : (
-                <div className="">
-                  {showLoading && (
-                    <div className="absolute bg-slate-200 bg-opacity-50 w-screen h-screen z-50 top-0 left-0">
-                      <div className="w-full h-full flex items-center justify-center">
-                        <img src={loading} alt="" width={200} />
-                      </div>
-                    </div>
-                  )}
-                  <form onSubmit={handleFormSubmit}>
-                    <p className="mt-5 rounded-lg p-1 mb-2">
-                      ỌjáKasuwaAhịa is here for the Nigerian Diaspora.
-                    </p>
-                    <p className="mb-10">
-                      Satisfy your Nigerian craving and Satisfy the cravings of
-                      Nigerians abroad by signing up below for FREE:
-                    </p>
-                    <span className="rounded-lg border-2 w-auto p-1 mb-5 border-[#117700]">
-                      Early Bird registration is free
-                    </span>
-                    <div className="lg:flex w-full justify-between items-center gap-3 my-5">
-                      <div className="relative w-full mb-5 lg:mb-0">
-                        <input
-                          className="w-full rounded-lg bg-gray-100 border-none p-2 "
-                          type="text"
-                          placeholder="First name"
-                          value={firstname}
-                          onChange={(e) => {
-                            setFirstname(e.target.value);
-                            setFirstnameError("");
-                          }}
-                        />
-                        {firstnameError && (
-                          <div className="absolute -bottom-3 left-0">
-                            {" "}
-                            <Error message={firstnameError} />{" "}
-                          </div>
-                        )}
-                      </div>
-                      <div className="relative w-full">
-                        <input
-                          className="w-full rounded-lg bg-gray-100 border-none p-2 "
-                          type="text"
-                          placeholder="Last name"
-                          value={lastname}
-                          onChange={(e) => {
-                            setLastname(e.target.value);
-                            setLastnameError("");
-                          }}
-                        />
-                        {lastnameError && (
-                          <div className="absolute -bottom-3 left-0">
-                            {" "}
-                            <Error message={lastnameError} />{" "}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                    <div className=" relative w-full mb-5">
-                      <input
-                        className="w-full rounded-lg bg-gray-100 border-none p-2 "
-                        type="email"
-                        placeholder="Email address"
-                        value={email}
-                        onChange={(e) => {
-                          setEmail(e.target.value);
-                          setEmailError("");
-                        }}
+                      <img
+                        src={ads.url}
+                        alt=""
+                        className="object-contain rounded-xl"
                       />
-                      {emailError && (
-                        <div className="absolute -bottom-3 left-0">
-                          {" "}
-                          <Error message={emailError} />{" "}
-                        </div>
-                      )}
                     </div>
-
-                    <div className="relative w-full mb-5">
-                      <select
-                        value={country}
-                        onChange={(e) => {
-                          setCountry(e.target.value);
-                          setCountryError("");
-                        }}
-                        className="w-full rounded-lg bg-gray-100 border-none p-2 "
+                  ))}
+                </Slider>
+              </div>
+              <div className="items-center justify-center">
+                {subscribe ? (
+                  <div>
+                    <h2 className="md:text-3xl text-2xl font-semibold text-[#117700]">
+                      Thank you for signing up we will get back to you shortly
+                    </h2>
+                    <div className="mt-5">
+                      <Link
+                        to="/"
+                        className="w-full bg-gray-400 rounded-lg p-2 text-white mt-5"
+                        onClick={<Navigate to={"/"} />}
                       >
-                        <option
-                          className="w-full rounded-lg bg-gray-100 border-none "
-                          defaultValue=""
-                          value=""
-                          disabled=""
-                        >
-                          Select Country
-                        </option>
-                        {countries.map((cn, id) => (
-                          <option
-                            key={id}
-                            className="w-full rounded-lg bg-gray-100 border-none "
-                            value={cn}
-                          >
-                            {cn}
-                          </option>
-                        ))}
-                      </select>
-                      {countryError && (
-                        <div className="absolute -bottom-3 left-0">
-                          {" "}
-                          <Error message={countryError} />{" "}
-                        </div>
-                      )}
+                        Return
+                      </Link>{" "}
                     </div>
-                    <div className="lg:flex w-full justify-between items-center gap-3 my-5">
-                      <div className="relative w-full mb-5 lg:mb-0">
-                        <select
-                          value={user_type}
+                  </div>
+                ) : (
+                  <div className="mt-10 w-full">
+                    {showLoading && (
+                      <div className="absolute bg-slate-200 bg-opacity-50 w-screen h-screen z-50 top-0 left-0">
+                        <div className="w-full h-full flex items-center justify-center">
+                          <img src={loading} alt="" width={200} />
+                        </div>
+                      </div>
+                    )}
+                    <form onSubmit={handleFormSubmit}>
+                      <span className="rounded-2xl border-2 w-auto p-1 px-4 border-[#117700]">
+                        Early Bird Registration is FREE
+                      </span>
+                      <div className="lg:flex w-full justify-between items-center gap-3 my-5 mt-10">
+                        <div className="relative w-full mb-5 lg:mb-0">
+                          <input
+                            className="w-full rounded-lg bg-gray-100 border-none p-2 "
+                            type="text"
+                            placeholder="First name"
+                            value={firstname}
+                            onChange={(e) => {
+                              setFirstname(e.target.value);
+                              setFirstnameError("");
+                            }}
+                          />
+                          {firstnameError && (
+                            <div className="absolute -bottom-3 left-0">
+                              {" "}
+                              <Error message={firstnameError} />{" "}
+                            </div>
+                          )}
+                        </div>
+                        <div className="relative w-full">
+                          <input
+                            className="w-full rounded-lg bg-gray-100 border-none p-2 "
+                            type="text"
+                            placeholder="Last name"
+                            value={lastname}
+                            onChange={(e) => {
+                              setLastname(e.target.value);
+                              setLastnameError("");
+                            }}
+                          />
+                          {lastnameError && (
+                            <div className="absolute -bottom-3 left-0">
+                              {" "}
+                              <Error message={lastnameError} />{" "}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                      <div className=" relative w-full mb-5">
+                        <input
+                          className="w-full rounded-lg bg-gray-100 border-none p-2 "
+                          type="email"
+                          placeholder="Email address"
+                          value={email}
                           onChange={(e) => {
-                            setUser_type(e.target.value);
-                            setUser_typeError("");
+                            setEmail(e.target.value);
+                            setEmailError("");
+                          }}
+                        />
+                        {emailError && (
+                          <div className="absolute -bottom-3 left-0">
+                            {" "}
+                            <Error message={emailError} />{" "}
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="relative w-full mb-5">
+                        <select
+                          value={country}
+                          onChange={(e) => {
+                            setCountry(e.target.value);
+                            setCountryError("");
                           }}
                           className="w-full rounded-lg bg-gray-100 border-none p-2 "
                         >
                           <option
                             className="w-full rounded-lg bg-gray-100 border-none "
-                            defaultValue="User Type"
-                            disabled={""}
-                            value={""}
+                            defaultValue=""
+                            value=""
+                            disabled=""
                           >
-                            Would you like to buy or sell
+                            Select Country
                           </option>
-
-                          <option
-                            className="w-full rounded-lg bg-gray-100 border-none "
-                            value={"Customer"}
-                          >
-                            I want to buy
-                          </option>
-                          <option
-                            className="w-full rounded-lg bg-gray-100 border-none "
-                            value={"Vendor"}
-                          >
-                            I want to sell
-                          </option>
+                          {countries.map((cn, id) => (
+                            <option
+                              key={id}
+                              className="w-full rounded-lg bg-gray-100 border-none "
+                              value={cn}
+                            >
+                              {cn}
+                            </option>
+                          ))}
                         </select>
-                        {user_typeError && (
+                        {countryError && (
                           <div className="absolute -bottom-3 left-0">
                             {" "}
-                            <Error message={user_typeError} />{" "}
+                            <Error message={countryError} />{" "}
                           </div>
                         )}
                       </div>
-                      <div className="relative w-full">
-                        <input
-                          className="w-full rounded-lg bg-gray-100 border-none p-2 "
-                          type="text"
-                          placeholder="Referral Code: (letters only)"
-                          value={referalCode}
-                          onChange={(e) => setReferalCode(e.target.value)}
-                        />
+                      <div className="lg:flex w-full justify-between items-center gap-3 my-5">
+                        <div className="relative w-full mb-5 lg:mb-0">
+                          <select
+                            value={user_type}
+                            onChange={(e) => {
+                              setUser_type(e.target.value);
+                              setUser_typeError("");
+                            }}
+                            className="w-full rounded-lg bg-gray-100 border-none p-2 "
+                          >
+                            <option
+                              className="w-full rounded-lg bg-gray-100 border-none "
+                              defaultValue="User Type"
+                              disabled={""}
+                              value={""}
+                            >
+                              Would you like to buy or sell
+                            </option>
+
+                            <option
+                              className="w-full rounded-lg bg-gray-100 border-none "
+                              value={"Customer"}
+                            >
+                              I want to buy
+                            </option>
+                            <option
+                              className="w-full rounded-lg bg-gray-100 border-none "
+                              value={"Vendor"}
+                            >
+                              I want to sell
+                            </option>
+                          </select>
+                          {user_typeError && (
+                            <div className="absolute -bottom-3 left-0">
+                              {" "}
+                              <Error message={user_typeError} />{" "}
+                            </div>
+                          )}
+                        </div>
+                        <div className="relative w-full">
+                          <input
+                            className="w-full rounded-lg bg-gray-100 border-none p-2 "
+                            type="text"
+                            placeholder="Referral Code: (letters only)"
+                            value={referalCode}
+                            onChange={(e) => setReferalCode(e.target.value)}
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <button
-                      className={
-                        email && country
-                          ? "w-full bg-[#117700] rounded-lg p-2 text-white"
-                          : "w-full bg-[#117700] bg-opacity-70 rounded-lg p-2 text-white"
-                      }
-                    >
-                      Create an Account
-                    </button>
-                  </form>
-                </div>
-              )}
+                      <button
+                        className={
+                          email && country
+                            ? "w-full bg-[#117700] rounded-lg p-2 text-white"
+                            : "w-full bg-[#117700] bg-opacity-70 rounded-lg p-2 text-white"
+                        }
+                      >
+                        Create an Account
+                      </button>
+                    </form>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="hidden lg:block w-1/2">
-          <Slider {...settings}>
-            {slideImages.map((ads, id) => (
-              <div key={id} className="">
-                <div className="bg-white w-11/12 mb-5">
-                  <p className="text-sm">{ads.info}</p>
+          <div className="hidden lg:block w-1/2">
+            <Slider {...settings}>
+              {slideImages.map((ads, id) => (
+                <div key={id} className="">
+                  <div className="bg-white w-11/12 mb-5">
+                    <p className="text-sm">{ads.info}</p>
+                  </div>
+
+                  <img
+                    src={ads.url}
+                    alt=""
+                    className="object-cover rounded-xl"
+                  />
                 </div>
-
-                <img src={ads.url} alt="" className="object-cover rounded-xl" />
-              </div>
-            ))}
-          </Slider>
-        </div>
+              ))}
+            </Slider>
+          </div>
+        </section>
       </div>
     </div>
   );
